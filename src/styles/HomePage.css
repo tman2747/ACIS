@@ -1,0 +1,18 @@
+.titleCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  text-shadow: 1px 1px 5px black;
+}
+.homePageBackground {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  object-fit: cover;
+  object-position: 0px;
+  height: 500px;
+  z-index: -1;
+}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./NavBar.css";
+import "./styles/NavBar.css";
 function NavBar() {
   return (
     <div className="navBar">
@@ -9,7 +9,7 @@ function NavBar() {
       <menu>
         <button>Option1</button>
         <button>About Us</button>
-        <button>Contact</button>
+        <button>Contact Us</button>
       </menu>
     </div>
   );

@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Creato Display", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+* {
+  outline: 1px solid red; /*Debugging*/
+}
+
+@font-face {
+  font-family: "Creato Display";
+  src: url("src/assets/fonts/creatodisplay-regular-webfont.woff2")
+      format("woff2"),
+    url("src/assets/fonts/creatodisplay-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Creato Display";
+  src: url("src/assets/fonts/creatodisplay-regularitalic-webfont.woff2")
+      format("woff2"),
+    url("src/assets/fonts/creatodisplay-regularitalic-webfont.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Creato Display";
+  src: url("src/assets/fonts/creatodisplay-bold-webfont.woff2") format("woff2"),
+    url("src/assets/fonts/creatodisplay-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Creato Display";
+  src: url("src/assets/fonts/creatodisplay-bolditalic-webfont.woff2")
+      format("woff2"),
+    url("src/assets/fonts/creatodisplay-bolditalic-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh; /* for mobile so the view port automatically accounts for the address bar going up and down*/
+  /* this is to make the rest of the page a flex container that way the bottom of the content will grow if its not big enough to fill the page */
+  display: flex;
+  /* same with this*/
+  flex-direction: column;
+}
+
+.content {
+  max-width: 140rem;
+  margin: auto;
+}
