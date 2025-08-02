@@ -7,7 +7,6 @@ function NavBar() {
         <img src="src/assets/ACIS.png" alt="" />
       </button>
       <menu>
-        <button>Option1</button>
         <button>About Us</button>
         <button>Contact Us</button>
       </menu>
