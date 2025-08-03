@@ -17,9 +17,9 @@
   z-index: -1;
 }
 .homePageContent {
-  display: flex; /* <-- REQUIRED */
-  flex-direction: column; /* Or column depending on layout */
-  align-items: stretch; /* Optional: stretches children */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .infoCard {
@@ -30,4 +30,9 @@
   box-shadow: 1px 1px 5px black;
   font-family: sans-serif;
   font-size: 18px;
+}
+
+.infoCard > h2 {
+  color: rgb(0, 31, 84);
+  padding: 0 0 10px 0;
 }

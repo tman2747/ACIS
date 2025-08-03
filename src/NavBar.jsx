@@ -4,7 +4,7 @@ function NavBar() {
   return (
     <div className="navBar">
       <button className="imageButton">
-        <img src="src/assets/ACIS.png" alt="" />
+        <img src="src/assets/ACIS.png" alt="" className="navBarImage" />
       </button>
       <menu>
         <button>About Us</button>

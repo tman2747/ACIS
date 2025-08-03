@@ -1,8 +1,12 @@
 .navBar {
+  position: sticky;
+  top: 0px;
   display: flex;
   justify-content: space-between;
   height: 90px;
   align-items: center;
+  z-index: 2;
+  background-color: white;
 }
 menu {
   display: flex;
@@ -16,8 +20,11 @@ button {
   width: 100px;
 }
 
-img {
+.navBarImage {
   height: 50px;
+}
+.navBarImage:hover {
+  background-color: rgb(240, 240, 240);
 }
 
 .imageButton {
