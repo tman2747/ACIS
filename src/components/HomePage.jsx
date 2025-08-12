@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./styles/HomePage.css";
+import "../styles/HomePage.css";
 import NavBar from "./NavBar";
 import Footer from "./footer";
 function HomePage() {
