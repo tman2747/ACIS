@@ -1,13 +1,18 @@
 import "../styles/NavBar.css";
+import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <div className="navBar">
-      <button className="imageButton">
+      <Link to="/">
         <img src="src/assets/ACIS.png" alt="" className="navBarImage" />
-      </button>
+      </Link>
       <menu>
-        <button>About Us</button>
-        <button>Contact Us</button>
+        <Link to="/about" className="navButton">
+          about
+        </Link>
+        <Link to="/contact" className="navButton">
+          Contact Us
+        </Link>
       </menu>
     </div>
   );

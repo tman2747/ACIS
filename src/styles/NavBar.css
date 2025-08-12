@@ -14,14 +14,26 @@ menu {
   align-items: center;
   gap: 10px;
 }
-button {
+.navButton {
   height: 50px;
   font-size: 18px;
   width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(182, 182, 182);
+  border-radius: 10px;
+  line-height: 1;
+  text-decoration: none;
+  color: inherit;
+}
+.navButton:hover {
+  background: #c2c2c2;
 }
 
 .navBarImage {
   height: 50px;
+  display: block; /* removes inline spacing under images */
 }
 .navBarImage:hover {
   background-color: rgb(240, 240, 240);
