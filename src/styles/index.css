@@ -12,6 +12,12 @@ html {
   outline: 1px solid red; /*Debugging*/
 }
 
+#root {
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
 @font-face {
   font-family: "Creato Display";
   src: url("src/assets/fonts/creatodisplay-regular-webfont.woff2")
@@ -59,10 +65,10 @@ body {
   display: flex;
   /* same with this*/
   flex-direction: column;
-  padding: 1rem;
 }
 
 .content {
   max-width: 140rem;
-  margin: auto;
+  margin: 0 auto 0 auto;
+  padding: 1rem;
 }
