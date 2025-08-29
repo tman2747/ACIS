@@ -1,38 +1,129 @@
+import { useEffect } from "react";
 import "../styles/HomePage.css";
+// Prefer importing the asset so Vite/CRA handles hashing & paths
+import bgImage from "../assets/Inventory.jpg";
+
 function HomePage() {
+  useEffect(() => {
+    // ----- <title> -----
+    document.title =
+      "Accuracy Counts Inventory Service | Professional Inventory Counts in Colorado";
+
+    // ----- meta name="description" -----
+    const descContent =
+      "Since 1984, Accuracy Counts Inventory Service provides precise physical inventory counts for grocery, gas, convenience, and retail businesses across Colorado.";
+    let desc = document.querySelector('meta[name="description"]');
+    if (!desc) {
+      desc = document.createElement("meta");
+      desc.setAttribute("name", "description");
+      document.head.appendChild(desc);
+    }
+    desc.setAttribute("content", descContent);
+
+    // ----- canonical (avoid duplicate homepage URLs like / and /index.html) -----
+    const canonicalHref = `${window.location.origin}/`;
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", canonicalHref);
+
+    // ----- Open Graph (basic) -----
+    const ogMap = {
+      "og:title": "Accuracy Counts Inventory Service",
+      "og:description": descContent,
+      "og:type": "website",
+      "og:url": canonicalHref,
+    };
+    Object.entries(ogMap).forEach(([property, content]) => {
+      let tag = document.querySelector(`meta[property="${property}"]`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute("property", property);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", content);
+    });
+
+    // ----- JSON-LD Structured Data: LocalBusiness / ProfessionalService -----
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      name: "Accuracy Counts Inventory Service",
+      foundingDate: "1984",
+      description: descContent,
+      areaServed: {
+        "@type": "State",
+        name: "Colorado",
+      },
+      url: canonicalHref,
+      serviceType: [
+        "Physical inventory counts",
+        "Retail inventory services",
+        "Grocery inventory audits",
+        "Convenience store inventory",
+      ],
+      // Add "telephone", "address", "geo" when you’re ready for local SEO boost.
+    };
+
+    let ldTag = document.getElementById("home-jsonld");
+    if (!ldTag) {
+      ldTag = document.createElement("script");
+      ldTag.type = "application/ld+json";
+      ldTag.id = "home-jsonld";
+      document.head.appendChild(ldTag);
+    }
+    ldTag.textContent = JSON.stringify(jsonLd);
+  }, []);
+
   return (
     <>
-      <div className="homePageContent">
+      <main className="homePageContent" role="main">
         <img
-          src="./src/assets/NotFREEUSE.jpg"
-          alt=""
+          src={bgImage}
+          alt="Inventory specialist performing a precise stock count in a Colorado retail store"
           className="homePageBackground"
+          loading="lazy"
+          width="1920"
+          height="1080"
         />
-        <div>
+
+        <section className="titleSection" aria-labelledby="site-title">
           <div className="titleCard">
-            <h1 className="title">Accuracy Counts Inventory Service</h1>
+            <h2 id="site-title" className="title">
+              Accuracy Counts Inventory Service
+            </h2>
           </div>
-        </div>
-        <div className="infoCard">
-          <h2>About Us</h2>
-          WIS International is the industry leading expert in global inventory,
-          data collection and technology innovation. With comprehensive
-          inventory and retail solutions and a substantial network of trained
-          professionals globally, WIS empowers you to manage your inventory and
-          space more effectively. Through our drive for excellence and
-          commitment to advanced technology, we have the capability to provide
-          scalable inventory services for a diverse range of industries. We help
-          businesses achieve greater efficiency and accuracy with their
-          inventory, which positions them to increase profitability. Whether we
-          handle inventory for your company or provide you with the tools to
-          succeed, WIS is the first choice for inventory services because of its
-          people-centric approach, exceptional processes, and superior standards
-          of service. With over 70 years’ experience, a workforce spanning over
-          20,000+ employees, 200+ offices and 3,500+ clients to service
-          worldwide, WIS International helps its customers increase accuracy,
-          reduce costs and save management time.
-        </div>
-      </div>
+        </section>
+
+        <section className="infoCard" aria-labelledby="about-heading">
+          <h3 id="about-heading">About Us</h3>
+          <p>
+            Founded in 1984, our company began after working with Washington
+            Inventory Services. With a passion for accuracy and reliability, we
+            branched out to serve businesses directly across Colorado.
+          </p>
+          <br />
+          <p>
+            For more than 40 years, we’ve specialized in physical inventory
+            counts for grocery stores, gas stations, convenience stores, and
+            retail businesses of all sizes. Our mission is simple: give every
+            client a clear, accurate picture of their stock so they can make
+            confident business decisions.
+          </p>
+          <br />
+          <p>
+            We proudly provide inventory services throughout Colorado, helping
+            local businesses reduce shrink, improve efficiency, and maintain
+            full confidence in their numbers. From small neighborhood shops to
+            large supermarkets, we bring the same level of detail and
+            reliability to every count. When Colorado businesses need trusted,
+            professional inventory services, they turn to us.
+          </p>
+        </section>
+      </main>
     </>
   );
 }

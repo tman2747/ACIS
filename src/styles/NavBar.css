@@ -7,6 +7,7 @@
   z-index: 2;
   background-color: rgb(255, 255, 255);
   padding: 1rem;
+  border-bottom: 1px rgb(0, 0, 0) solid;
 }
 .navBarItemContainer {
   display: flex;
@@ -21,32 +22,82 @@ menu {
   align-items: center;
   gap: 10px;
 }
-.navButton {
-  height: 50px;
-  font-size: 18px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(182, 182, 182);
-  border-radius: 10px;
-  line-height: 1;
-  text-decoration: none;
-  color: inherit;
-}
-.navButton:hover {
-  background: #c2c2c2;
-}
 
 .navBarImage {
   height: 50px;
   display: block; /* removes inline spacing under images */
 }
 .navBarImage:hover {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(249, 250, 251);
+  border-radius: 5px;
 }
 
 .imageButton {
   background-color: rgba(240, 248, 255, 0);
   all: unset;
+}
+
+.navButton:hover {
+  background-color: rgb(249, 250, 251);
+}
+
+.navButton:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.navButton:focus-visible {
+  box-shadow: none;
+}
+
+.navButton,
+.navBarImage {
+  align-items: center;
+  appearance: none;
+  background-color: #fcfcfd;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395a;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+.navButton:focus,
+.navBarImage:focus {
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+}
+
+.navButton:hover,
+.navBarImage:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.navButton:active,
+.navBarImage:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
 }

@@ -8,9 +8,6 @@
 html {
   font-size: 10px;
 }
-* {
-  outline: 1px solid red; /*Debugging*/
-}
 
 #root {
   min-height: inherit;
@@ -18,44 +15,47 @@ html {
   flex-direction: column;
 }
 
+/* Regular */
 @font-face {
   font-family: "Creato Display";
   src: url("src/assets/fonts/creatodisplay-regular-webfont.woff2")
-      format("woff2"),
-    url("src/assets/fonts/creatodisplay-regular-webfont.woff") format("woff");
+    format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+000-5FF; /* Latin + Latin-1; adjust if you need more */
 }
 
+/* Regular Italic */
 @font-face {
   font-family: "Creato Display";
   src: url("src/assets/fonts/creatodisplay-regularitalic-webfont.woff2")
-      format("woff2"),
-    url("src/assets/fonts/creatodisplay-regularitalic-webfont.woff")
-      format("woff");
+    format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
+  unicode-range: U+000-5FF;
 }
 
+/* Bold */
 @font-face {
   font-family: "Creato Display";
-  src: url("src/assets/fonts/creatodisplay-bold-webfont.woff2") format("woff2"),
-    url("src/assets/fonts/creatodisplay-bold-webfont.woff") format("woff");
+  src: url("src/assets/fonts/creatodisplay-bold-webfont.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+000-5FF;
 }
 
+/* Bold Italic */
 @font-face {
   font-family: "Creato Display";
   src: url("src/assets/fonts/creatodisplay-bolditalic-webfont.woff2")
-      format("woff2"),
-    url("src/assets/fonts/creatodisplay-bolditalic-webfont.woff") format("woff");
+    format("woff2");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
+  unicode-range: U+000-5FF;
 }
 
 body {
@@ -65,10 +65,12 @@ body {
   display: flex;
   /* same with this*/
   flex-direction: column;
+  background-color: rgb(244, 244, 244);
 }
 
 .content {
   max-width: 140rem;
+  width: 100%;
   margin: 0 auto 0 auto;
   padding: 1rem;
 }

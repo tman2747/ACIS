@@ -1,17 +1,24 @@
 import { Children } from "react";
 import App from "./components/App";
 import ErrorPage from "./components/ErrorPage";
-import About from "./components/About.jsx";
+import Contact from "./components/contact.jsx";
+import HomePage from "./components/HomePage.jsx";
 
 const routes = [
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "about",
-    element: <About />,
+    children: [
+      {
+        index: true, // this makes About the default ("/")
+        element: <HomePage />,
+      },
+      {
+        path: "contact", // renders at "/contact"
+        element: <Contact />,
+      },
+    ],
   },
 ];
 

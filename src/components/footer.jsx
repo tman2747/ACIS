@@ -7,7 +7,10 @@ function Footer() {
     <>
       <div className={styles.footer}>
         <p>
-          Made by <a href="https://tristonland.com">TristonSquad</a>
+          Made by{" "}
+          <a href="https://tristonland.com" target="blank">
+            TristonSquad
+          </a>
         </p>
       </div>
     </>
