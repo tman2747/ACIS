@@ -4,8 +4,9 @@ export default function Contact() {
   const business = {
     name: "Accuracy Counts Inventory Service",
     legalName: "Accuracy Counts Inventory Service, LLC",
-    phone: "(555) 867-5309", // update
-    email: "info@aciscolorado.com", // update
+    employee: [{ name: "Tom", phone: "(720) 333-6454" }],
+    phone: "(720) 333-6454",
+    email: "bigtom51012@gmail.com",
     website: "https://www.example.com", // update
     street: "3173 W 114th Loop",
     city: "Westminster",
@@ -27,6 +28,7 @@ export default function Contact() {
 
   return (
     <>
+      <div className={styles.background}></div>
       <div>
         <h2 className={styles.title}>Contact us</h2>
         <div className={styles.contactCard}>
@@ -51,7 +53,13 @@ export default function Contact() {
           <div className={styles.call}>
             <h3>call</h3>
             <a className={styles.link} href={telHref}>
-              {business.phone}
+              {business.employee.map((worker) => {
+                return (
+                  <>
+                    {worker.name}: {worker.phone}
+                  </>
+                );
+              })}
             </a>
           </div>
 

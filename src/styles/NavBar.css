@@ -101,3 +101,13 @@ menu {
   box-shadow: #d6d6e7 0 3px 7px inset;
   transform: translateY(2px);
 }
+
+@media (max-width: 1000px) {
+  .navButton,
+  .navBarImage {
+    font-size: 12px;
+  }
+  .navBar {
+    padding: 10px 0px;
+  }
+}

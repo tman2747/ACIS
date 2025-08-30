@@ -100,3 +100,14 @@
       "mail    mail    mail    hours  hours   hours";
   }
 }
+
+.background {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(2, 0, 52);
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: polygon(100% 0, 100% 42%, 100% 100%, 0% 100%);
+  z-index: -1;
+}
